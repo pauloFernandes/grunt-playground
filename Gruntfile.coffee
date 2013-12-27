@@ -6,14 +6,17 @@ module.exports = (grunt)->
         src: "dist/main.min.js"
         options:
           specs: "build/spec/*.js"
-          helpers: "build/spec/helpers/*.js"  
+          helpers: "build/spec/helpers/*.js"
     uglify:
       options:
         banner: '/* <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        mangle: false
       dist:
         files:
           "dist/main.min.js": ["build/src/*.js", "build/src/**/*.js"]
     coffee:
+      options:
+        bare: true
       compile:
         expand: true
         src: ["src/**/*.coffee", "spec/**/*.coffee"]
