@@ -1,9 +1,15 @@
-describe "No início do jogo", ->
+describe "Construção do tabuleiro.", ->
   jogo = new Jogo
+
+  beforeEach ->
+    jogo.inicializaPosicaoPecas()
+
   it "O tabuleiro deve ter 64 casas, 8x8", ->
     expect(jogo.tabuleiro.length).toBe 8
     expect(coluna.length).toBe 8 for coluna in jogo.tabuleiro
 
+
+describe "Construção das peças.", ->
   it "A classe peao deve manter a cor", ->
     preto = new Peao Cor.PRETA
     expect(preto.cor).toBe Cor.PRETA
